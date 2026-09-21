@@ -1,42 +1,81 @@
----
-layout: page
-description: "Thinking will not overcome fear but action will."
----
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0d1021" />
+    <meta name="description" content="WNA LYPING 的个人博客：写作、项目与持续形成中的想法。" />
+    <meta property="og:title" content="WNA LYPING — Personal Field Notes" />
+    <meta property="og:description" content="记录正在成形的想法，把事情做出来。" />
+    <meta property="og:type" content="website" />
+    <title>WNA LYPING — Personal Field Notes</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="scroll-progress" id="scroll-progress"></div>
+    <div class="site-shell" id="home">
+      <header class="site-header">
+        <a class="brand" href="#home" aria-label="回到首页"><span class="brand-mark">W</span><span class="brand-name">WNA <b>LYPING</b></span></a>
+        <nav class="main-nav" aria-label="主要导航"><a href="#writing">Writing</a><a href="#projects">Projects</a><a href="#about">About</a></nav>
+        <div class="header-actions"><span class="header-status"><i></i>ONLINE / CN</span><button class="theme-toggle" type="button" aria-label="切换深色模式" title="切换深色模式"><span class="theme-sun">☼</span><span class="theme-moon">◐</span></button></div>
+      </header>
 
-{% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-        <h2 class="post-title">
-            {{ post.title }}
-        </h2>
-        {% if post.subtitle %}
-        <h3 class="post-subtitle">
-            {{ post.subtitle }}
-        </h3>
-        {% endif %}
-        <div class="post-content-preview">
-            {{ post.content | strip_html | truncate:200 }}
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by {% if post.author %}{{ post.author }}{% else %}{{ site.title }}{% endif %} on {{ post.date | date: "%B %-d, %Y" }}
-    </p>
-</div>
-<hr>
-{% endfor %}
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-frame">
+            <div class="hero-copy">
+              <div class="eyebrow"><span>FIELD NOTES / 001</span><span>WNA LYPING · 2026</span></div>
+              <h1 id="hero-title">把想法写下来，<span>把事情<br />做出来。</span></h1>
+              <p class="hero-intro">一个关于技术、AI、设计和日常生活的个人角落。这里不追赶热点，只记录那些值得慢慢想清楚的东西。</p>
+              <div class="hero-actions"><a class="button button-primary" href="#writing">进入我的文章 <b>↓</b></a><a class="hero-text-link" href="#about">先认识我 <span>↗</span></a></div>
+            </div>
+            <div class="hero-art" aria-label="WNA LYPING 个人网站视觉封面">
+              <div class="hero-grid"></div><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
+              <div class="art-card art-card-lime"><span>W</span><small>WNA<br />LYPING</small></div>
+              <div class="art-card art-card-blue"><span>MAKE<br /><em>MEANING</em><br />VISIBLE.</span><b>✳</b></div>
+              <div class="art-note"><span>01</span><p>关于拥有<br />一个自己的<br />互联网角落</p></div>
+              <div class="art-stamp">KEEP<br />GOING</div>
+            </div>
+            <div class="hero-corner">SCROLL TO EXPLORE <span>↘</span></div>
+          </div>
+          <div class="hero-footer"><div><span class="micro-label">NOW</span><strong>Building a small corner<br />on the internet.</strong></div><div><span class="micro-label">BASE</span><strong>Somewhere between<br />curiosity & craft.</strong></div><div><span class="micro-label">OPEN FOR</span><strong><a href="mailto:hello@wnalyping.cn">Good conversations ↗</a></strong></div></div>
+        </section>
 
-<!-- Pager -->
-{% if paginator.total_pages > 1 %}
-<ul class="pager">
-    {% if paginator.previous_page %}
-    <li class="previous">
-        <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&larr; Newer Posts</a>
-    </li>
-    {% endif %}
-    {% if paginator.next_page %}
-    <li class="next">
-        <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Older Posts &rarr;</a>
-    </li>
-    {% endif %}
-</ul>
-{% endif %}
+        <section class="manifesto reveal" aria-label="网站宣言"><span class="manifesto-mark">✳</span><p>我相信，个人网站不只是展示自己。<br /><strong>它是一个人持续思考、试错和留下痕迹的地方。</strong></p><span class="manifesto-index">/ 01</span></section>
+
+        <section class="content-section reveal" id="writing" aria-labelledby="writing-title">
+          <div class="section-heading"><div><p class="section-index">01 / WRITING</p><h2 id="writing-title">最近写了什么</h2></div><p class="section-note">Thoughts, experiments<br />and things worth keeping.</p></div>
+          <div class="filter-bar" role="group" aria-label="文章分类"><span class="filter-label">FILTER BY</span><button class="filter-chip active" type="button" data-filter="all">All <b>04</b></button><button class="filter-chip" type="button" data-filter="thinking">Thinking <b>01</b></button><button class="filter-chip" type="button" data-filter="ai">AI <b>01</b></button><button class="filter-chip" type="button" data-filter="design">Design <b>01</b></button><button class="filter-chip" type="button" data-filter="life">Life <b>01</b></button></div>
+          <div class="journal-grid">
+            <article class="journal-feature reveal-child" data-category="thinking">
+              <button class="visual-cover" type="button" data-article="article-01" aria-label="打开文章：为什么每个人都应该拥有一个属于自己的角落"><span class="cover-number">01</span><span class="cover-words">OWN<br /><em>YOUR</em><br />SPACE.</span><span class="cover-asterisk">✳</span><span class="cover-caption">FIELD NOTE / THINKING</span></button>
+              <div class="article-meta"><span>2026.09.21</span><span>Thinking · 8 min</span></div><h3>为什么每个人都应该拥有一个属于自己的角落</h3><p>网站不只是名片。它更像一个长期容器，让零散的想法、作品和生活经验慢慢长出自己的形状。</p><button class="read-link" type="button" data-article="article-01">阅读全文 <span>↗</span></button>
+            </article>
+            <div class="journal-list">
+              <article class="journal-row reveal-child" data-category="ai"><span class="row-number">02</span><div><div class="article-meta"><span>2026.09.13</span><span>AI · 12 min</span></div><h3>我如何把 AI 放进每天的工作流</h3><p>从收集问题，到让工具真正参与思考。</p></div><button class="row-arrow" type="button" data-article="article-02" aria-label="阅读：我如何把 AI 放进每天的工作流">↗</button></article>
+              <article class="journal-row reveal-child" data-category="design"><span class="row-number">03</span><div><div class="article-meta"><span>2026.09.02</span><span>Design · 6 min</span></div><h3>好的个人网站，应该留下什么</h3><p>少一点包装，多一点真实的痕迹。</p></div><button class="row-arrow" type="button" data-article="article-03" aria-label="阅读：好的个人网站，应该留下什么">↗</button></article>
+              <article class="journal-row reveal-child" data-category="life"><span class="row-number">04</span><div><div class="article-meta"><span>2026.08.23</span><span>Life · 5 min</span></div><h3>给未来自己的一个小小更新</h3><p>记录今天，未来就知道自己走了多远。</p></div><button class="row-arrow" type="button" data-article="article-04" aria-label="阅读：给未来自己的一个小小更新">↗</button></article>
+            </div>
+          </div>
+        </section>
+
+        <section class="content-section project-section reveal" id="projects" aria-labelledby="projects-title">
+          <div class="section-heading"><div><p class="section-index">02 / PROJECTS</p><h2 id="projects-title">正在做的事情</h2></div><p class="section-note">Small projects.<br />Long experiments.</p></div>
+          <div class="project-list">
+            <article class="project-row project-row-blue reveal-child"><div class="project-index">01 / NOW</div><div class="project-main"><h3>WNA<br /><em>LYPING</em></h3><p>个人网站与内容系统。一个持续更新的数字花园，收纳文章、项目和新的方向。</p><div class="tag-list"><span>Web</span><span>Writing</span><span>Identity</span></div></div><div class="project-visual visual-w"><span>W/</span><small>PERSONAL<br />SYSTEM</small></div><span class="project-arrow">↗</span></article>
+            <article class="project-row project-row-ink reveal-child"><div class="project-index">02 / LAB</div><div class="project-main"><h3>AI Workflow<br /><em>Lab</em></h3><p>把 AI 当作协作伙伴，而不是快捷按钮。记录实验、失败和真正有效的工作方式。</p><div class="tag-list"><span>AI</span><span>Notes</span><span>Experiments</span></div></div><div class="project-visual visual-star"><span>✳</span><small>TRY / FAIL<br />/ REPEAT</small></div><span class="project-arrow">↗</span></article>
+            <article class="project-row project-row-lime reveal-child"><div class="project-index">03 / SOON</div><div class="project-main"><h3>Small<br /><em>Internet</em></h3><p>关于独立网站、慢内容和网络个人空间的一组长期观察与实践。</p><div class="tag-list"><span>Culture</span><span>Indie web</span><span>Research</span></div></div><div class="project-visual visual-lines"><span>///</span><small>MAKE YOUR<br />OWN SPACE</small></div><span class="project-arrow">↗</span></article>
+          </div>
+        </section>
+
+        <section class="about-section reveal" id="about" aria-labelledby="about-title"><div class="about-panel"><div class="about-top"><p class="section-index">03 / ABOUT</p><span>HELLO, THERE <i>✳</i></span></div><div class="about-content"><div class="about-display" aria-hidden="true">WNA<br /><em>LYPING</em></div><div class="about-copy"><h2 id="about-title">你好，我是<br /><em>WNA LYPING。</em></h2><p>我喜欢把模糊的兴趣变成具体的东西：一篇文章、一段代码、一个页面，或者一次还没有答案的实验。</p><p>这个网站会慢慢记录它们。欢迎从文章开始，也欢迎直接来打个招呼。</p><div class="about-links"><a href="mailto:hello@wnalyping.cn">Email <span>↗</span></a><a href="https://github.com/yolonn" target="_blank" rel="noreferrer">GitHub <span>↗</span></a></div></div></div><div class="principles"><span>A FEW PRINCIPLES</span><ol><li><b>01</b>内容先于形式</li><li><b>02</b>保持好奇，也保持耐心</li><li><b>03</b>做有用、诚实的东西</li></ol></div></div></section>
+      </main>
+
+      <footer class="site-footer"><div><a class="footer-brand" href="#home">wnalyping.cn<span>✳</span></a><p>记录正在成形的想法。</p></div><div class="footer-right"><span>© <span id="year">2026</span> WNA LYPING</span><a href="#home">回到顶部 ↑</a></div></footer>
+    </div>
+
+    <dialog class="article-dialog" id="article-dialog"><div class="dialog-inner"><button class="dialog-close" type="button" data-close-dialog aria-label="关闭文章">×</button><div class="dialog-kicker" id="dialog-kicker"></div><h2 id="dialog-title"></h2><div class="article-meta" id="dialog-meta"></div><div class="dialog-rule"></div><div class="dialog-content" id="dialog-content"></div></div></dialog>
+    <script src="/script.js"></script>
+  </body>
+</html>
